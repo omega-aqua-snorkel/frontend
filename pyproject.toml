@@ -1,0 +1,31 @@
+[project]
+name = "stream-encoder"
+version = "0.1.0"
+description = "Encode videos for streaming"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "blake3>=1.0.4",
+    "cloudflare>=4.1.0",
+    "ffmpeg-python>=0.2.0",
+    "langcodes>=3.5.0",
+    "m3u8>=6.0.0",
+    "mq-python>=0.0.1",
+    "pydantic>=2.11.4",
+    "python-dotenv>=1.1.0",
+]
+
+[project.scripts]
+stream-encoder = "main:main"
+
+[project.optional-dependencies]
+cli = [
+    "tqdm>=4.67.1",
+]
+
+[dependency-groups]
+dev = [
+    "autoflake>=2.3.1",
+    "black>=25.1.0",
+    "isort>=6.0.1",
+]
