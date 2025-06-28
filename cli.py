@@ -5,14 +5,17 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+@click.group()
+def cli():
+    pass
 
-@click.command()
+@cli.command("upload")
 @click.option("--token", help="Cloudflare API token", envvar="CLOUDFLARE_API_TOKEN")
 @click.option("--account", help="Cloudflare account ID", envvar="CLOUDFLARE_ACCOUNT_ID")
 @click.option("--account-name", help="Cloudflare account name", envvar="CLOUDFLARE_ACCOUNT_NAME")
 @click.option("--project", help="Cloudflare Pages project name", envvar="CLOUDFLARE_PROJECT_NAME")
 @click.argument("path", type=click.Path(exists=True, path_type=Path, readable=True))
-def main(token, account, account_name, project, path):
+def upload(token, account, account_name, project, path):
     cf = CloudflarePages(
         api_token=token,
         account_id=account,
@@ -23,4 +26,4 @@ def main(token, account, account_name, project, path):
 
 
 if __name__ == "__main__":
-    main()
+    cli()

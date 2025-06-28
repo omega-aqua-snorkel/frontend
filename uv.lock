@@ -599,6 +599,7 @@ version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "blake3" },
+    { name = "click" },
     { name = "cloudflare" },
     { name = "ffmpeg-python" },
     { name = "langcodes" },
@@ -623,6 +624,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "blake3", specifier = ">=1.0.4" },
+    { name = "click", specifier = ">=8.2.0" },
     { name = "cloudflare", specifier = ">=4.1.0" },
     { name = "ffmpeg-python", specifier = ">=0.2.0" },
     { name = "langcodes", specifier = ">=3.5.0" },
